@@ -1,5 +1,5 @@
 import React from "react";
-import { getDefaultPrice } from "../../service";
+import { getDefaultPrice } from "../service";
 
 import useApiCallOnMount from '../components/useApiCallOnMount';
 import ApiStateHandler from '../components/ApiStateHandler';

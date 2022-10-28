@@ -4,7 +4,7 @@ import Customiser from './components/Customiser';
 import Summary from './components/Summary';
 import Price from './components/Price';
 import ApiStateHandler from './components/ApiStateHandler';
-import { getCustomisableComponents } from '../service';
+import { getCustomisableComponents } from './service';
 import useApiCallOnMount from './components/useApiCallOnMount';
 
 const App = () => {

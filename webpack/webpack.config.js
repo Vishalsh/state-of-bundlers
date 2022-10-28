@@ -12,7 +12,7 @@ module.exports = {
     }),
   ],
   entry: {
-    index: './src/index.js',
+    index: '../app/index.js',
   },
   output: {
     filename: '[name].bundle.js',
