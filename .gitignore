@@ -6,6 +6,7 @@
 /webpack/node_modules
 /esbuild/node_modules
 /vite/node_modules
+/rollup/node_modules
 
 /.pnp
 .pnp.js
