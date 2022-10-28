@@ -1,11 +1,11 @@
 import React from "react";
 import { getDefaultPrice } from "../service";
 
-import useApiCallOnMount from '../components/useApiCallOnMount';
-import ApiStateHandler from '../components/ApiStateHandler';
+import useApiCallOnMount from "../components/useApiCallOnMount";
+import ApiStateHandler from "../components/ApiStateHandler";
 
 const Price = ({ addOnPrice }) => {
-  const [ loading, data, error ] = useApiCallOnMount(getDefaultPrice);
+  const [loading, data, error] = useApiCallOnMount(getDefaultPrice);
 
   return (
     <div className="price container">
@@ -13,12 +13,14 @@ const Price = ({ addOnPrice }) => {
         <h1 className="price__value">
           Total:
           <ApiStateHandler loading={loading} error={error}>
-            <span data-testid="total-price">{` ₹${data?.value + addOnPrice}`}</span>
+            <span data-testid="total-price">{` ₹${
+              data?.value + addOnPrice
+            }`}</span>
           </ApiStateHandler>
         </h1>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Price;

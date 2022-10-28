@@ -12,15 +12,15 @@ const useApiCallOnMount = (service) => {
         setData(data);
       })
       .catch((error) => {
-        console.log(error)
+        console.log(error);
         setError(error);
       })
       .finally(() => {
         setLoading(false);
-      })
+      });
   }, [service]);
 
   return [loading, data, error];
-}
+};
 
 export default useApiCallOnMount;

@@ -1,12 +1,12 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo } from "react";
 
-import Customiser from './components/Customiser';
-import Summary from './components/Summary';
-import Price from './components/Price';
-import ApiStateHandler from './components/ApiStateHandler';
-import { getCustomisableComponents } from './service';
-import useApiCallOnMount from './components/useApiCallOnMount';
-import macbook from './assets/macbook.jpeg';
+import Customiser from "./components/Customiser";
+import Summary from "./components/Summary";
+import Price from "./components/Price";
+import ApiStateHandler from "./components/ApiStateHandler";
+import { getCustomisableComponents } from "./service";
+import useApiCallOnMount from "./components/useApiCallOnMount";
+import macbook from "./assets/macbook.jpeg";
 
 const App = () => {
   const [configurableComponents, setConfigurableComponents] = useState({});
@@ -17,30 +17,40 @@ const App = () => {
       setConfigurableComponents(data);
     }
   }, [data]);
-  
+
   const setSelectedVariant = (component, variantSerialNo) => {
     setConfigurableComponents({
       ...configurableComponents,
-      [component]: configurableComponents[component].map(variant => {
+      [component]: configurableComponents[component].map((variant) => {
         return {
           ...variant,
-          selected: variant.serialNo === variantSerialNo
-        }
-      })
+          selected: variant.serialNo === variantSerialNo,
+        };
+      }),
     });
-  }
+  };
 
   const getAddOnPrice = useMemo(() => {
-    return Object.keys(configurableComponents).reduce((totalAddOnPrice, component) => {
-      return totalAddOnPrice + configurableComponents[component].find(variant => variant.selected).addOnPrice
-    }, 0);
+    return Object.keys(configurableComponents).reduce(
+      (totalAddOnPrice, component) => {
+        return (
+          totalAddOnPrice +
+          configurableComponents[component].find((variant) => variant.selected)
+            .addOnPrice
+        );
+      },
+      0
+    );
   }, [configurableComponents]);
 
   return (
     <>
       <header>
         <div className="header__content">
-          <a className="header__link" href="https://www.apple.com/in/macbook-pro">
+          <a
+            className="header__link"
+            href="https://www.apple.com/in/macbook-pro"
+          >
             <strong>MacBook Pro</strong>
           </a>
         </div>
@@ -53,9 +63,14 @@ const App = () => {
             </section>
             <section className="configuration">
               <ApiStateHandler loading={loading} error={error}>
-                <h1 className="mt-0">Customise your 16‑inch MacBook Pro - Space Grey</h1>
+                <h1 className="mt-0">
+                  Customise your 16‑inch MacBook Pro - Space Grey
+                </h1>
                 <Summary configurableComponents={configurableComponents} />
-                <Customiser configurableComponents={configurableComponents} onSelectVariant={setSelectedVariant} />
+                <Customiser
+                  configurableComponents={configurableComponents}
+                  onSelectVariant={setSelectedVariant}
+                />
               </ApiStateHandler>
             </section>
           </div>
@@ -64,6 +79,6 @@ const App = () => {
       </main>
     </>
   );
-}
+};
 
 export default App;
