@@ -4,6 +4,7 @@
 /node_modules
 /server/node_modules
 /webpack/node_modules
+/esbuild/node_modules
 
 /.pnp
 .pnp.js
@@ -14,6 +15,7 @@
 # production
 /build
 /webpack/dist
+/esbuild/dist
 
 # misc
 .DS_Store

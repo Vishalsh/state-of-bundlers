@@ -1,6 +1,6 @@
 {
   "name": "@state-of-bundlers/webpack",
-  "version": "1.0.3",
+  "version": "1.0.0",
   "description": "bundling with webpack",
   "scripts": {
     "start": "webpack serve --config webpack.config.js",

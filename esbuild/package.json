@@ -1,0 +1,11 @@
+{
+  "name": "@state-of-bundlers/esbuild",
+  "version": "1.0.0",
+  "description": "bundling with esbuild",
+  "scripts": {
+    "build": "rm -rf dist/ && node ./esbuild.config.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.15.12"
+  }
+}
