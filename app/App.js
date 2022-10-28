@@ -6,6 +6,7 @@ import Price from './components/Price';
 import ApiStateHandler from './components/ApiStateHandler';
 import { getCustomisableComponents } from './service';
 import useApiCallOnMount from './components/useApiCallOnMount';
+import macbook from './assets/macbook.jpeg';
 
 const App = () => {
   const [configurableComponents, setConfigurableComponents] = useState({});
@@ -48,7 +49,7 @@ const App = () => {
         <div className="main__container">
           <div className="main__content">
             <section>
-              <img className="macbook-img" alt="macbook pro" src="https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/mbp16touch-space-select-201911?wid=1808&hei=1686&fmt=jpeg&qlt=80&.v=1572825197207" />
+              <img className="macbook-img" alt="macbook pro" src={macbook} />
             </section>
             <section className="configuration">
               <ApiStateHandler loading={loading} error={error}>

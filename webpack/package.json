@@ -4,7 +4,7 @@
   "description": "bundling with webpack",
   "scripts": {
     "start": "webpack serve --config webpack.config.js",
-    "build": "webpack --config webpack.config.js"
+    "build": "rm -rf dist/ && webpack --config webpack.config.js"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -14,6 +14,7 @@
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^5.0.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^4.5.0",
     "jest": "^28.1.3",
     "style-loader": "^2.0.0",
