@@ -5,6 +5,7 @@
 /server/node_modules
 /webpack/node_modules
 /esbuild/node_modules
+/vite/node_modules
 
 /.pnp
 .pnp.js
