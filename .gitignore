@@ -18,6 +18,8 @@
 /build
 /webpack/dist
 /esbuild/dist
+/vite/dist
+/rollup/dist
 
 # misc
 .DS_Store
