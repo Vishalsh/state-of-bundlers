@@ -3,6 +3,8 @@ require("esbuild")
     logLevel: "info",
     entryPoints: ["../app/index.js"],
     bundle: true,
+    minify: true,
+    sourcemap: true,
     loader: {
       ".js": "jsx",
       ".jpeg": "dataurl",
