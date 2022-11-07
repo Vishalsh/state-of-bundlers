@@ -7,6 +7,7 @@
 /esbuild/node_modules
 /vite/node_modules
 /rollup/node_modules
+/swc/node_modules
 
 /.pnp
 .pnp.js
@@ -20,6 +21,7 @@
 /esbuild/dist
 /vite/dist
 /rollup/dist
+/swc/dist
 
 # misc
 .DS_Store

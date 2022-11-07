@@ -1,0 +1,12 @@
+{
+  "name": "@state-of-bundlers/esbuild",
+  "version": "1.0.0",
+  "description": "bundling with esbuild",
+  "scripts": {
+    "build": "swc ../app/index.js"
+  },
+  "devDependencies": {
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.3.11"
+  }
+}
