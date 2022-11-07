@@ -20,15 +20,6 @@ export default {
     babel({
       presets: ["@babel/preset-react"],
     }),
-    serve({
-      open: true,
-      verbose: true,
-      contentBase: ["", "dist"],
-      historyApiFallback: true,
-      host: "localhost",
-      port: 3000,
-    }),
-    livereload({ watch: "dist" }),
     nodeResolve({
       extensions: [".js", ".jsx"],
     }),
