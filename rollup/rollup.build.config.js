@@ -1,5 +1,3 @@
-import serve from "rollup-plugin-serve";
-import livereload from "rollup-plugin-livereload";
 import babel from "@rollup/plugin-babel";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
@@ -7,14 +5,21 @@ import replace from "@rollup/plugin-replace";
 import image from "@rollup/plugin-image";
 import postcss from "rollup-plugin-postcss";
 import { terser } from "rollup-plugin-terser";
+import html from '@rollup/plugin-html';
+
+const dependencies = require('../package.json').dependencies;
 
 export default {
   input: "../app/index.js",
   output: {
-    file: "dist/bundle.js",
-    format: "iife",
-    sourcemap: true, 
+    dir: 'dist',
+    format: 'esm',
+    sourcemap: true,
     compact: true,
+  },
+  external: dependencies,
+  manualChunks: {
+    vendor: Object.keys(dependencies),
   },
   plugins: [
     babel({
@@ -30,7 +35,9 @@ export default {
     commonjs(),
     terser(),
     replace({
+      preventAssignment: true,
       "process.env.NODE_ENV": JSON.stringify("development"),
     }),
+    html(),
   ],
 };

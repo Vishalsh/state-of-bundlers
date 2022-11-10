@@ -1,6 +1,7 @@
 const Webpack = require("webpack");
 const HtmlWelpackPlugin = require("html-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const dependencies = require('../package.json').dependencies;
 
 module.exports = {
   mode: "production",
@@ -14,11 +15,12 @@ module.exports = {
     }),
     new Webpack.SourceMapDevToolPlugin({
       filename: '[name].js.map',
-      exclude: ['vendor.bundle.js'],
+      exclude: 'vendor.bundle.js',
     }),
   ],
   entry: {
-    index: "../app/index.js",
+    index: { import: '../app/index.js' },
+    vendor: Object.keys(dependencies),
   },
   output: {
     filename: "[name].bundle.js",

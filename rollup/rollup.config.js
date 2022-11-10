@@ -11,8 +11,8 @@ import { terser } from "rollup-plugin-terser";
 export default {
   input: "../app/index.js",
   output: {
-    file: "dist/bundle.js",
-    format: "iife",
+    dir: 'dist',
+    format: 'esm',
     sourcemap: true, 
     compact: true,
   },
@@ -39,6 +39,7 @@ export default {
     commonjs(),
     terser(),
     replace({
+      preventAssignment: true,
       "process.env.NODE_ENV": JSON.stringify("development"),
     }),
   ],
