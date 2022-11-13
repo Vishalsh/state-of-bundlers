@@ -4,8 +4,8 @@
   "description": "Rollup",
   "main": "dist/index.js",
   "scripts": {
-    "build": "rm -rf dist/ && rollup -c rollup.build.config.js",
-    "start": "rollup -c rollup.config.js"
+    "start": "rollup -c rollup.dev.config.js",
+    "build": "rm -rf dist/ && rollup -c rollup.prod.config.js"
   },
   "author": "",
   "license": "ISC",

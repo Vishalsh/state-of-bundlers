@@ -36,7 +36,7 @@ export default {
     terser(),
     replace({
       preventAssignment: true,
-      "process.env.NODE_ENV": JSON.stringify("development"),
+      "process.env.NODE_ENV": JSON.stringify("production"),
     }),
     html(),
   ],

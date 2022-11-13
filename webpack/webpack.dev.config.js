@@ -4,7 +4,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 const dependencies = require('../package.json').dependencies;
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   devServer: {
     port: 8081,
     historyApiFallback: true,
@@ -12,10 +12,6 @@ module.exports = {
   plugins: [
     new HtmlWelpackPlugin({
       template: "./public/index.html",
-    }),
-    new Webpack.SourceMapDevToolPlugin({
-      filename: '[name].js.map',
-      exclude: 'vendor.bundle.js',
     }),
   ],
   entry: {
@@ -50,14 +46,6 @@ module.exports = {
         },
       },
     ],
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [new TerserPlugin({
-      terserOptions: {
-        compress: true
-      }
-    })],
   },
   resolve: {
     extensions: [".js", ".jsx"],

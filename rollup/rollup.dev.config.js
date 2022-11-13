@@ -6,15 +6,12 @@ import commonjs from "@rollup/plugin-commonjs";
 import replace from "@rollup/plugin-replace";
 import image from "@rollup/plugin-image";
 import postcss from "rollup-plugin-postcss";
-import { terser } from "rollup-plugin-terser";
 
 export default {
   input: "../app/index.js",
   output: {
     dir: 'dist',
     format: 'esm',
-    sourcemap: true, 
-    compact: true,
   },
   plugins: [
     babel({
@@ -37,7 +34,6 @@ export default {
     }),
     image(),
     commonjs(),
-    terser(),
     replace({
       preventAssignment: true,
       "process.env.NODE_ENV": JSON.stringify("development"),
