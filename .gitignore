@@ -8,6 +8,7 @@
 /vite/node_modules
 /rollup/node_modules
 /swc/node_modules
+/webpack_with_swc/node_modules
 
 /.pnp
 .pnp.js
@@ -22,6 +23,7 @@
 /vite/dist
 /rollup/dist
 /swc/dist
+/webpack_with_swc/dist
 
 # misc
 .DS_Store

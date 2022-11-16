@@ -1,4 +1,6 @@
+const Webpack = require("webpack");
 const HtmlWelpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 const dependencies = require('../package.json').dependencies;
 
 module.exports = {
@@ -22,16 +24,13 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.jsx?$/, 
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
-          options: {
-            presets: ["@babel/preset-react", "@babel/preset-env"],
-            plugins: ["@babel/plugin-transform-runtime"],
-          },
-        },
-      },
+          // Use `.swcrc` to configure swc
+          loader: "swc-loader"
+        }
+      },     
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
